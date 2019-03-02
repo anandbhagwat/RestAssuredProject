@@ -1,0 +1,123 @@
+{
+	"id": "47c18551-5bea-4689-8b87-ef4b685d42bc",
+	"name": "GetRequest",
+	"allTests": [],
+	"timestamp": "2019-03-01T11:31:07.813Z",
+	"collection_id": "42c80576-e7e1-4225-b14a-de6254088df5",
+	"folder_id": "4a5a7e92-6b34-48d7-a3f8-2e2754b85d99",
+	"target_type": "folder",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "42c80576-e7e1-4225-b14a-de6254088df5",
+		"name": "MyTestCollection",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [],
+		"folders_order": [
+			"4a5a7e92-6b34-48d7-a3f8-2e2754b85d99"
+		],
+		"owner": "6246962",
+		"permissions": {},
+		"favorite": false,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": {
+		"id": "4a5a7e92-6b34-48d7-a3f8-2e2754b85d99",
+		"name": "GetRequest",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"collection": "42c80576-e7e1-4225-b14a-de6254088df5",
+		"folder": null,
+		"order": [
+			"da188a9f-f336-492e-b600-15654aaca941"
+		],
+		"folders_order": [],
+		"type": "folder",
+		"depth": 1
+	},
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "GetWeather",
+			"id": "da188a9f-f336-492e-b600-15654aaca941",
+			"url": "http://restapi.demoqa.com/utilities/weather/city/pune",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"error": null,
+				"name": "Status code is 200",
+				"status": "pass",
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"341"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body matches string": true
+				}
+			],
+			"time": "341",
+			"totalRequestTime": "341",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 2,
+	"totalFail": 0,
+	"totalTime": 341,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "GetWeather",
+			"id": "da188a9f-f336-492e-b600-15654aaca941",
+			"url": "http://restapi.demoqa.com/utilities/weather/city/pune",
+			"time": "2019-03-01T11:31:07.813Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
