@@ -5,10 +5,7 @@
     <classes>
       <class name="RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3">
         <methods>
-          <include name="testContentType"/>
           <include name="RestAssured_Program"/>
-          <include name="testCityeName"/>
-          <include name="testStatusCode"/>
         </methods>
       </class> <!-- RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3 -->
     </classes>
