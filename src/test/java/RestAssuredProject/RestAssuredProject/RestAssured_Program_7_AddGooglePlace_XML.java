@@ -1,5 +1,5 @@
 package RestAssuredProject.RestAssuredProject;
-
+import utilties.Utilties;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.equalTo;
@@ -13,11 +13,12 @@ import java.util.Properties;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
+import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class RestAssured_Program_6_AddGooglePlace_Element3 {
+public class RestAssured_Program_7_AddGooglePlace_XML {
 	Properties property = new Properties();
 	@BeforeTest
 	public void setupProperties() throws IOException{
@@ -28,63 +29,40 @@ public class RestAssured_Program_6_AddGooglePlace_Element3 {
 		
 	}
   @Test
-  public void RestAssured_Program() {
+  public void RestAssured_Program() throws IOException {
 	  RestAssured.baseURI=property.getProperty("HOST");
+	 String PostData = Utilties.GenerateStringFromResource("C:\\Users\\anbhagwat\\eclipse-workspace\\RestAssuredProject\\src\\test\\java\\payload\\mypayload.xml");
 	  //Storing response in response
-	 Response resposneOutput= given().
+	 Response resposneOutput= given().log().all().
 	  		queryParam("key","AIzaSyCo4aImrLRZQCNUSWQbFiFdRcZuY2QCnEM").
-	  		body("{"+
-
-	  		    "\"location\":{"+
-
-	  		        "\"lat\" : -38.383494,"+
-
-	  		        "\"lng\" : 33.427362"+
-
-	  		    "},"+
-
-	  		    "\"accuracy\":100,"+
-
-	  		    "\"name\":\"Bhagwat House\","+
-
-	  		    "\"phone_number\":\"(+91) 7276261087\","+
-
-	  		    "\"address\" : \"Shehar Peth\","+
-
-	  		    "\"types\": [\"shoe park\",\"shop\"],"+
-
-	  		    "\"website\" : \"http://google.com\","+
-
-	  		    "\"language\" : \"French-IN\""+
-
-	  		"}").
+	  		body(PostData).
 	  		when().
-	  		post("/maps/api/place/add/json").
-	  		then().assertThat().statusCode(200).and().body("status",equalTo("OK")).
+	  		post("/maps/api/place/add/xml").
+	  		then().assertThat().statusCode(200).
 	  		extract().response();
 	  		
 	 		// We got response in raw format, hence converting raw response into string
 	 		String respsonseAsString = resposneOutput.asString();
 	 		System.out.println(respsonseAsString);
+	 		
 	 		//Then converting string into JSON response to traverse for specific element
-	 		JsonPath js = new JsonPath(respsonseAsString);
-	 		System.out.println(js.get("place_id"));
+	 		XmlPath x = Utilties.rawToXML(resposneOutput);
 	 		
-	 		String place_id = js.get("place_id");
 	 		
+	 		System.out.println(x.get("response.place_id"));
 	 		//Deleting the place with captured place _ id
 	 		
-	 		
-	 		
-	 		
-	 		given().
+	 		//https://github.com/rest-assured/rest-assured/wiki/Usage#logging
+	 		given().log().all().
 	 				queryParam("key","AIzaSyCo4aImrLRZQCNUSWQbFiFdRcZuY2QCnEM").
-	 		body("{"+
-	 		    "\"place_id\":\""+place_id+"\""+
-	 		"}"
+	 		body("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n" + 
+	 				"<root>\n" + 
+	 				"    <place_id>"+x.get("response.place_id")+"</place_id>\n" + 
+	 				"</root>\n" + 
+	 				""
 ).
 	 		when().
-	 		post("/maps/api/place/delete/json").
+	 		post("/maps/api/place/delete/xml").
 	 		then().assertThat().statusCode(200);
 	 		
 	 		
@@ -100,4 +78,6 @@ public class RestAssured_Program_6_AddGooglePlace_Element3 {
 	 		
   }
   
+  
+	
 }

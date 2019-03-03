@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3">
+      <class name="RestAssuredProject.RestAssuredProject.RestAssured_Program_7_AddGooglePlace_XML">
         <methods>
           <include name="RestAssured_Program"/>
+          <include name="setupProperties"/>
         </methods>
-      </class> <!-- RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3 -->
+      </class> <!-- RestAssuredProject.RestAssuredProject.RestAssured_Program_7_AddGooglePlace_XML -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -2,16 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1890" started-at="2019-03-02T14:11:58Z" finished-at="2019-03-02T14:12:00Z">
+  <suite name="Default suite" duration-ms="1704" started-at="2019-03-03T12:45:41Z" finished-at="2019-03-03T12:45:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1890" started-at="2019-03-02T14:11:58Z" finished-at="2019-03-02T14:12:00Z">
-      <class name="RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3">
-        <test-method status="PASS" signature="RestAssured_Program()[pri:0, instance:RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3@215be6bb]" name="RestAssured_Program" duration-ms="1875" started-at="2019-03-02T19:41:58Z" finished-at="2019-03-02T19:42:00Z">
+    <test name="Default test" duration-ms="1704" started-at="2019-03-03T12:45:41Z" finished-at="2019-03-03T12:45:42Z">
+      <class name="RestAssuredProject.RestAssuredProject.RestAssured_Program_7_AddGooglePlace_XML">
+        <test-method status="PASS" signature="setupProperties()[pri:0, instance:RestAssuredProject.RestAssuredProject.RestAssured_Program_7_AddGooglePlace_XML@6cc4c815]" name="setupProperties" is-config="true" duration-ms="5" started-at="2019-03-03T18:15:41Z" finished-at="2019-03-03T18:15:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupProperties -->
+        <test-method status="PASS" signature="RestAssured_Program()[pri:0, instance:RestAssuredProject.RestAssuredProject.RestAssured_Program_7_AddGooglePlace_XML@6cc4c815]" name="RestAssured_Program" duration-ms="1686" started-at="2019-03-03T18:15:41Z" finished-at="2019-03-03T18:15:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RestAssured_Program -->
-      </class> <!-- RestAssuredProject.RestAssuredProject.RestAssured_Program_6_AddGooglePlace_Element3 -->
+      </class> <!-- RestAssuredProject.RestAssuredProject.RestAssured_Program_7_AddGooglePlace_XML -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
